@@ -5,16 +5,10 @@ import { AddToDo } from "./src/AddTodo";
 import { Todo } from "./src/Todo";
 
 export default function App() {
-  // todos - стейт, setTodos - функция, меняющая стейт
   const [todos, setTodos] = useState([]); // тип данных "Кортеж"
-
-  //*
-  //**
-  // возврат (раскукоженого старого стейта + новый элемент)
 
   const addTodo = (title) => {
 
-    // вызов функции
     setTodos( (prev) => [
       ...prev,
       {
