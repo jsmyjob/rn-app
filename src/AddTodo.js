@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, Button } from "react-native";
+import { View, Text, StyleSheet, TextInput, Button, Alert } from "react-native";
 
 export const AddToDo = ({ onSubmit }) => {
 
@@ -10,9 +10,8 @@ const [value, setValue] = useState('')
         onSubmit(value);
         setValue('');
       } else {
-          // error
+          Alert.alert('Ой! Кажется, ты забыл написать задание.')
       }
-    
   };
 
   return (
