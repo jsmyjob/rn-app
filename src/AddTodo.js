@@ -23,7 +23,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
 
         // верх-низ
-        alignItems: 'center'
+        alignItems: 'center',
+
+        marginBottom: 15
     },
 
     button: {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Navbar } from "./src/Navbar";
 import { AddToDo } from "./src/AddTodo";
+import { Todo } from "./src/Todo";
 
 export default function App() {
   // todos - стейт, setTodos - функция, меняющая стейт
@@ -31,7 +32,7 @@ export default function App() {
         <AddToDo onSubmit={addTodo} />
         <View>
           {todos.map(todo => {
-            return <Text key={todo.id}>{todo.title}</Text>;
+            return <Todo todo={todo} key={todo.id}/>;
           })}
         </View>
       </View>
