@@ -7,9 +7,12 @@ import { Todo } from "./src/Todo";
 export default function App() {
   const [todos, setTodos] = useState([]); // тип данных "Кортеж"
 
-  const addTodo = (title) => {
+  const removeTodo = (id) => {
+    setTodos(prev => prev.filter(todo => todo.id !== id))
+  };
 
-    setTodos( (prev) => [
+  const addTodo = (title) => {
+    setTodos((prev) => [
       ...prev,
       {
         id: Date.now().toString(),
@@ -17,7 +20,7 @@ export default function App() {
       }
     ])
   };
-  
+
 
   return (
     <View>
@@ -25,10 +28,10 @@ export default function App() {
       <View style={styles.container}>
         <AddToDo onSubmit={addTodo} />
 
-        <FlatList 
-        data = {todos}
-        renderItem = { ({item}) => <Todo todo={item}/> }
-        keyExtractor = { (item) => item.id }
+        <FlatList
+          data={todos}
+          renderItem={({ item }) => <Todo todo={item} onRemove={removeTodo} />}
+          keyExtractor={(item) => item.id}
         />
 
       </View>
