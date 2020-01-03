@@ -22,6 +22,8 @@ const [value, setValue] = useState('')
         // onChangeText = {setValue}
         value={value}
         placeholder='Введите название дела'
+        autoCorrect={true}
+        autoCapitalize='none'
         />
       <Button title="Добавить" style={styles.button} onPress={pressHandler} />
     </View>
@@ -51,6 +53,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: "#3949ab",
     fontSize: 15,
-    padding: 10
+    padding: 10,
   }
 });
