@@ -1,6 +1,5 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { THEME } from "../themes/theme";
 
 export const AppCard = props => (
   <View style={{ ...styles.default, ...props.style }}>
