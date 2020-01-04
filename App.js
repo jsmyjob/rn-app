@@ -44,6 +44,17 @@ export default function App() {
     );
   };
 
+  const updateTodo = (id, title) => {
+    setTodos(old =>
+      old.map(todo => {
+        if (todo.id === id) {
+          todo.title = title;
+        }
+        return todo;
+      })
+    );
+  };
+
   let content = (
     <MainScreen
       todos={todos}
@@ -60,6 +71,7 @@ export default function App() {
         goBack={() => setTodoId(null)}
         todo={selectedTodo}
         onRemove={removeTodo}
+        onSave={updateTodo}
       />
     );
   }
@@ -74,7 +86,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    height: '85%',
+    height: "85%",
     paddingHorizontal: 30,
     paddingVertical: 20
   }
