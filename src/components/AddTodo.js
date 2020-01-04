@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, StyleSheet, TextInput, Button, Alert } from "react-native";
+import { THEME } from "../themes/theme";
 
 export const AddTodo = ({ onSubmit }) => {
   const [value, setValue] = useState("");
@@ -22,7 +23,7 @@ export const AddTodo = ({ onSubmit }) => {
         autoCorrect={true}
         autoCapitalize="none"
       />
-      <Button title="Добавить" style={styles.button} onPress={pressHandler} />
+      <Button title="Добавить" color={'orange'} onPress={pressHandler} />
     </View>
   );
 };
@@ -35,14 +36,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 15
   },
-  button: {
-    backgroundColor: "#f194ff"
-  },
   input: {
     width: "70%",
     borderStyle: "solid",
     borderBottomWidth: 2,
-    borderBottomColor: "#3949ab",
+    borderBottomColor: THEME.MAIN_COLOR,
     fontSize: 15,
     padding: 10
   }

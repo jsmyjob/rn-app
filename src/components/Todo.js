@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { THEME } from "../themes/theme";
 export const Todo = ({ todo, onRemove, onOpen }) => {
   return (
     <TouchableOpacity
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderRadius: 5,
-    borderColor: "#eee",
+    borderColor: THEME.MAIN_COLOR,
     borderWidth: 2,
     padding: 15,
     marginBottom: 10
